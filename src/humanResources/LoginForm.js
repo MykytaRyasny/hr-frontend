@@ -1,31 +1,26 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import {Navigate, useNavigate} from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Col} from "react-bootstrap";
 import MainPage from "./MainPage";
-
-
+import App from "../App";
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [userItem, setUserItem] = useState(null)
     const navigate = useNavigate();
-
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         axios.defaults.baseURL = 'http://127.0.0.1:8080';
         try {
             const response = await axios.post('/auth/login',
             {
                 username,
                 password
-            });
-            setUserItem(response.data)
-            navigate('main', {userItem});
+            })
+            navigate('main', {state: response.data});
         } catch (error) {
             console.error(error)
         }
