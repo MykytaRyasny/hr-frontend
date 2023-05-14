@@ -9,6 +9,13 @@ function MainPage() {
     const {state:userData} = location;
     const navigate = useNavigate();
     axios.defaults.baseURL = 'http://127.0.0.1:8080';
+    function onClickList(){
+        axios
+            .get('/employee/all')
+            .then(response => navigate('/employees', {state: response.data}))
+            .catch(error => console.log(error))
+
+    }
     return (
         <Container fluid>
             <Row style={{padding:20}}>
@@ -16,11 +23,10 @@ function MainPage() {
                     event => navigate('/')
                 }>Logout</Button></Col>
             </Row>
-            {(() => { if(userData.rol == "admin") {
+            {(() => { if(userData.rol === "admin" || userData.rol === "hr") {
                 return <Button variant="outline-primary" onClick={
-                event => navigate('')
+                event => onClickList()
             }>Todos los trabajadores</Button>;
-
             } else {
                 return console.log();
             }})()}

@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import {Navigate, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.css';
 import {Col} from "react-bootstrap";
-import MainPage from "./MainPage";
-import App from "../App";
+
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
