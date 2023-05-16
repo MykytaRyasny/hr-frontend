@@ -8,6 +8,8 @@ function createWindow() {
     const mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
+        minHeight: 550,
+        minWidth: 700,
         // Set the path of an additional "preload" script that can be used to
         // communicate between node-land and browser-land.
         webPreferences: {
@@ -15,6 +17,7 @@ function createWindow() {
             webSecurity: app.isPackaged
         },
     });
+    // disable all shortcuts and menu bar
     mainWindow.setMenu(null);
 
     // In production, set the initial browser path to the local bundle generated

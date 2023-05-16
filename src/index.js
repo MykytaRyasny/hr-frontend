@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Routes, Route, useNavigate} from "react-router-dom";
+import {BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginForm from "./humanResources/LoginForm";
 import MainPage from "./humanResources/MainPage";
 import ListEmployees from "./humanResources/ListEmployees";
