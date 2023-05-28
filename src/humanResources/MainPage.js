@@ -4,8 +4,6 @@ import axios from "axios";
 import {useLocation, useNavigate} from 'react-router-dom';
 import {Col, Container, Row} from "react-bootstrap";
 import NavBar from "./NavBar";
-
-
 function MainPage() {
     const location = useLocation();
     const {state:userData} = location;
