@@ -1,5 +1,5 @@
 // Module to control the application lifecycle and the native browser window.
-const { app, BrowserWindow, protocol } = require("electron");
+const { app, BrowserWindow, protocol} = require("electron");
 const path = require("path");
 const url = require("url");
 
@@ -14,11 +14,13 @@ function createWindow() {
         // communicate between node-land and browser-land.
         webPreferences: {
             preload: path.join(__dirname, "preload.js"),
-            webSecurity: app.isPackaged
+            // webSecurity: app.isPackaged
+            webSecurity: false
         },
     });
+
     // disable all shortcuts and menu bar
-    mainWindow.setMenu(null);
+    //mainWindow.setMenu(null);
 
     // In production, set the initial browser path to the local bundle generated
     // by the Create React App build process.
