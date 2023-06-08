@@ -5,7 +5,6 @@
   "homepage": "./",
   "author": "Mykyta Ryasny",
   "description": "RRHH App",
-
   "private": true,
   "dependencies": {
     "@electron/remote": "^2.0.9",
