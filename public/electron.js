@@ -20,7 +20,7 @@ function createWindow() {
     });
 
     // disable all shortcuts and menu bar
-    //mainWindow.setMenu(null);
+    mainWindow.setMenu(null);
 
     // In production, set the initial browser path to the local bundle generated
     // by the Create React App build process.

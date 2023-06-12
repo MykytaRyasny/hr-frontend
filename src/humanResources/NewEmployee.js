@@ -21,7 +21,6 @@ function NewEmployee() {
             setLastName(state.lastName)
         }
     }, [state])
-    console.log(dni+" " + firstName + " " + lastName)
 
     const handleSubmit = async (event) => {
         event.preventDefault();
